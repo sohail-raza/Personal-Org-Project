@@ -48,6 +48,9 @@ namespace Personal_Organiser_Project
             dispatcherTimer.Start();
         }
 
+
+  
+
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
 
@@ -55,7 +58,19 @@ namespace Personal_Organiser_Project
 
         }
 
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
 
+        private void NewFileButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void LabelClicked(object sender, MouseButtonEventArgs e)
+        {
+            TestLabel.Content = "it worked!";
+        }
     }
 }
