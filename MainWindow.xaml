@@ -8,19 +8,33 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid ShowGridLines="True">
 
-        <Label x:Name="dispatchLbl" Grid.Row="0" Grid.Column="4"></Label>
+        <Label x:Name="dispatchLbl" Grid.Row="1" Grid.Column="3"></Label>
+
+        <DockPanel x:Name="MenubarDockPanel" Grid.ColumnSpan="2">
+            <Menu DockPanel.Dock="Top" Grid.RowSpan="4" Margin="0,0,-464,0">
+                <MenuItem Header="File" Height="20" Padding="10,0,20,0"/>
+                <MenuItem Header="Edit" Height="20" Padding="0,0,20,0"/>
+                <MenuItem Header="View" Height="20" Padding="0,0,20,0"/>
+                <MenuItem Header="Help" Height="20" Padding="0,0,20,0"/>
+                <MenuItem Header="About" Height="20" Padding="0,0,20,0"/>
+
+            </Menu>
+
+        </DockPanel>
+
 
 
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="71*"></ColumnDefinition>
-            <ColumnDefinition Width="28*"/>
-            <ColumnDefinition Width="99*"></ColumnDefinition>
-            <ColumnDefinition Width="99*"></ColumnDefinition>
-            <ColumnDefinition Width="99*"></ColumnDefinition>
+
+            <ColumnDefinition Width="91*"/>
+            <ColumnDefinition Width="226*"></ColumnDefinition>
+            <ColumnDefinition Width="226*"></ColumnDefinition>
+            <ColumnDefinition Width="226*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
+            <RowDefinition x:Name="MenubarRowDefinition" Height="25"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
