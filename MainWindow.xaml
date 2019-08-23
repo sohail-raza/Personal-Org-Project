@@ -5,15 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Personal_Organiser_Project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="478" Width="800">
     <Grid ShowGridLines="True">
 
+        <TextBox x:Name="TextWriterBox"
+                 Grid.Row="2"
+                 Grid.Column="1"
+                 Grid.RowSpan="4"
+                 Grid.ColumnSpan="2" 
+                 Background="DarkGray" 
+                 BorderBrush="LightGray" 
+                 BorderThickness="3" 
+                 Padding="5"
+                 FontSize="14">
+                 Insert text to save...</TextBox>
+
         <Label x:Name="dispatchLbl" Grid.Row="1" Grid.Column="3"></Label>
-        
+
         <DockPanel x:Name="MenubarDockPanel" Grid.ColumnSpan="2">
+            
             <Menu DockPanel.Dock="Top" Grid.RowSpan="4" Margin="0,0,-464,0">
                 <MenuItem Header="File" Height="20" Padding="10,0,20,0" Click="MenuItem_Click">
                     <Label x:Name="NewFileButton" MouseLeftButtonDown="LabelClicked" >New</Label>
+                    <Label x:Name="OpenFileButton" MouseLeftButtonDown="OpenLabelClicked">Open</Label>
+                    <Label x:Name="SaveFileButton" MouseLeftButtonDown="SaveLabelClicked">Save</Label>
                 </MenuItem>
 
 
@@ -25,10 +40,7 @@
             </Menu>
 
         </DockPanel>
-        <Label x:Name="TestLabel" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="97,54,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-
-
-
+        <Label x:Name="TestLabel" Content="Label" HorizontalAlignment="Left" Margin="20,74,0,0" Grid.Row="3" VerticalAlignment="Top"/>
 
         <Grid.ColumnDefinitions>
 
@@ -36,10 +48,14 @@
             <ColumnDefinition Width="226*"></ColumnDefinition>
             <ColumnDefinition Width="226*"></ColumnDefinition>
             <ColumnDefinition Width="226*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition x:Name="MenubarRowDefinition" Height="25"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>

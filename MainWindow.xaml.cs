@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +28,6 @@ namespace Personal_Organiser_Project
     public partial class MainWindow : Window
     {
         string dateFormat = "dddd, dd MMMM yyyy";
-
 
 
         public MainWindow()
@@ -68,9 +69,39 @@ namespace Personal_Organiser_Project
 
         }
 
+
         private void LabelClicked(object sender, MouseButtonEventArgs e)
         {
             TestLabel.Content = "it worked!";
+            TextWriterBox.Text = "Insert text to save...";
         }
+
+        private void SaveLabelClicked(object sender, MouseButtonEventArgs e)
+        {
+
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "Text file (*.txt)|*.txt";
+
+            if (save.ShowDialog() == true)
+            {
+                File.WriteAllText(save.FileName, TextWriterBox.Text);
+
+
+
+
+            }
+
+        }
+        private void OpenLabelClicked(object sender, MouseButtonEventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+
+            if (open.ShowDialog() == true)
+            {
+                TextWriterBox.Text = File.ReadAllText(open.FileName);
+            }
+        }
+
+
     }
 }
