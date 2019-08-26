@@ -32,16 +32,23 @@
                 </MenuItem>
 
 
-                <MenuItem Header="Edit" Height="20" Padding="0,0,20,0"/>
-                <MenuItem Header="View" Height="20" Padding="0,0,20,0"/>
+                <MenuItem Header="Edit" Height="20" Padding="0,0,20,0"></MenuItem>
+
+                <MenuItem Header="View" Height="20" Padding="0,0,20,0">
+                <Label x:Name="ViewMessageBoxBtn" Content="View Text in Box" MouseLeftButtonDown="ViewTextinBoxClicked">
+                </Label>
+                </MenuItem>
+
+
+
                 <MenuItem Header="Help" Height="20" Padding="0,0,20,0"/>
                 <MenuItem Header="About" Height="20" Padding="0,0,20,0"/>
 
             </Menu>
 
         </DockPanel>
-        <Label x:Name="TestLabel" Content="Label" HorizontalAlignment="Left" Margin="20,74,0,0" Grid.Row="3" VerticalAlignment="Top"/>
 
+        <Label x:Name="TestLabel" Grid.Row="1" Content="test"></Label>
         <Grid.ColumnDefinitions>
 
             <ColumnDefinition Width="91*"/>

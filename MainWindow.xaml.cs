@@ -28,6 +28,8 @@ namespace Personal_Organiser_Project
     public partial class MainWindow : Window
     {
         string dateFormat = "dddd, dd MMMM yyyy";
+        List<string> TextAsList = new List<string>();
+           
 
 
         public MainWindow()
@@ -35,6 +37,7 @@ namespace Personal_Organiser_Project
 
             InitializeComponent();
             InitialiseClock();
+            TextWriterBox.SpellCheck.IsEnabled = true;
 
 
         }
@@ -56,6 +59,8 @@ namespace Personal_Organiser_Project
         {
 
             dispatchLbl.Content = DateTime.Now.ToString(dateFormat);
+            TextAsList.Clear();
+            TextAsList.Add(TextWriterBox.Text); // Updates the list with the latest text box data
 
         }
 
@@ -92,6 +97,8 @@ namespace Personal_Organiser_Project
             }
 
         }
+
+
         private void OpenLabelClicked(object sender, MouseButtonEventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -102,6 +109,24 @@ namespace Personal_Organiser_Project
             }
         }
 
+        private void ViewTextinBoxClicked(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show(TextAsList[0],"View in message");
 
+
+        
+
+
+            /*
+            //int SpellCheckErrCount;
+            
+            foreach(var word in )
+            string spellCheckErr = TextWriterBox.GetSpellingError(index);
+
+            if(TextWriterBox.Text.)
+          */
+
+
+        }
     }
 }
